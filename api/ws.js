@@ -6,17 +6,15 @@ module.exports = (req, res) => {
   if (!res.socket.server.wss) {
     wss = new Server({ server: res.socket.server });
     res.socket.server.wss = wss;
-    wss.on('connection', function connection(ws) {
-      ws.on('message', function incoming(message) {
-        // Broadcast to everyone else
-        wss.clients.forEach(function each(client) {
-          if (client !== ws && client.readyState === 1) {
-            client.send(message);
+    wss.on('connection', (ws) => {
+      ws.on('message', (message) => {
+        wss.clients.forEach((client) => {
+          if (client.readyState === ws.OPEN) {
+            client.send(message.toString());
           }
         });
       });
     });
-    console.log('WebSocket server started!');
   }
   res.status(200).end();
 };
