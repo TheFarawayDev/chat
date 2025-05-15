@@ -1,15 +1,8 @@
 {
-  "name": "vercel-websocket-server",
+  "name": "vercel-chat-ws",
   "version": "1.0.0",
-  "description": "WebSocket server for Vercel",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "main": "api/ws.js",
   "dependencies": {
-    "ws": "^8.17.1"
-  },
-  "engines": {
-    "node": ">=14.0.0"
+    "ws": "^8.0.0"
   }
 }
