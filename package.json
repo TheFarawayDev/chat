@@ -1,8 +1,15 @@
 {
-  "name": "vercel-chat-ws",
+  "name": "vercel-chat",
   "version": "1.0.0",
-  "main": "api/ws.js",
-  "dependencies": {
-    "ws": "^8.0.0"
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "build": "echo 'No build step'"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
